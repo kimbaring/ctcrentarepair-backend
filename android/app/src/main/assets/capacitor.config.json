@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "RentARepairUI",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
