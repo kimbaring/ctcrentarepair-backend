@@ -1,6 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set} from "firebase/database";
+import { getStorage } from "firebase/storage";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,9 +17,12 @@ const firebaseConfig = {
   appId: "1:813302972394:web:9650e8c94a1e82a9d07c93"
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
+const storage =  getStorage();
+
 function pull(path){return ref(db,path);}
 function push(path,value){
     const reference = pull(path);
@@ -25,11 +30,22 @@ function push(path,value){
     return ref(db,path);
 }
 
+function spull(path){return ref(db,path);}
+function spush(path,value){
+  const reference = pull(path);
+  set(reference,value);
+  return ref(db,path);
+}
+
+
 
 
 export default app;
 export {
     db,
+    storage,
     pull,
     push,
+    spull,
+    spush
 };

@@ -85,18 +85,6 @@ const routes = [
         component: CustomerTransactionHistoryView,
       },
       {
-        path: '/customer/profile',
-        component: () => import('@/views/CustomerView/CustomerProfileView.vue'),
-      },
-      {
-        path: "/customer/profile/update",
-        component: () => import("@/views/CustomerView/CustomerUpdateProfile.vue")
-      },
-      {
-        path: "/customer/profile/changepassword",
-        component: () => import("@/views/CustomerView/CustomerChangePassword.vue")
-      },
-      {
         path: "/customer/transactionhistory/transactiondetails",
         component: () => import("@/views/CustomerView/CustomerTransactionDetailsView.vue")
       },
@@ -119,7 +107,19 @@ const routes = [
       {
         path: "/customer/dashboard/location/cardetails/booked/chat",
         component: () => import("@/views/ChatView/ChatView.vue")
-      }
+      },
+      {
+        path: "/customer/profile",
+        component: () => import('@/views/ProfileView.vue')
+      },
+      {
+        path: '/customer/profile/update',
+        component: () => import('@/views/UpdateProfile.vue')
+      },
+      {
+        path: '/customer/profile/changepassword',
+        component: () => import('@/views/ChangePassword.vue')
+      },
     ]
   },
   {
@@ -145,7 +145,23 @@ const routes = [
       {
         path: '/technician/tasks/taskdetails/location',
         component: () => import('@/views/TechnicianView/TechnicianTaskLocationView.vue')
-      }
+      },
+      {
+        path: "/technician/dashboard/location/cardetails/booked/chat",
+        component: () => import("@/views/ChatView/ChatView.vue")
+      },
+      {
+        path: "/technician/profile",
+        component: () => import('@/views/ProfileView.vue')
+      },
+      {
+        path: '/technician/profile/update',
+        component: () => import('@/views/UpdateProfile.vue')
+      },
+      {
+        path: '/technician/profile/changepassword',
+        component: () => import('@/views/ChangePassword.vue')
+      },
     ]
   }
 ]

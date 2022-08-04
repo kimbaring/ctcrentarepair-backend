@@ -57,7 +57,7 @@ import {
     IonInput,
     IonTextarea
 } from '@ionic/vue';
-import {local, openToast,validateForm, axiosReq} from '@/functions';
+import {local, openToast,validateForm, axiosReq, dateFormat} from '@/functions';
 import router from '@/router';
 import { ciapi } from '@/js/globals';
 import { push } from '@/firebase';

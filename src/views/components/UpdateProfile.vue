@@ -13,7 +13,7 @@
                 <ion-input v-model="user.lastname" placeholder="Last Name"></ion-input>
                 <ion-input v-model="user.username" placeholder="Username"></ion-input>
                 <ion-input v-model="user.email" placeholder="Email"></ion-input>
-                <ion-button expand="block" @click="$router.push('/customer/profile/changepassword')">Change Password</ion-button>
+                <ion-button expand="block" @click="$router.push('/'+$route.path.split('/')[1]+'/profile/changepassword')">Change Password</ion-button>
                 <ion-button expand="block" @click="reset">Reset</ion-button>
                 <ion-button expand="block" class="save" @click="save">Save</ion-button>
             </div>
@@ -109,7 +109,7 @@ export default({
                     user_info.lastname = this.user.lastname;
                     user_info.username = this.user.username;
                     user_info.email = this.user.email;
-                    local.set('user_info', JSON.stringify(user_info));
+                    local.setObject('user_info', user_info);
                     router.go(-1);
                 }
                 else if(res.data.msg == 'invalid token') openToast('Token expired!', 'danger');

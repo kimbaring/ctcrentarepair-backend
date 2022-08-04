@@ -9,11 +9,11 @@
         <ion-tab-button tab="tasks" href="/technician/tasks">
           <ion-icon :icon="buildOutline" />
         </ion-tab-button>
-        <ion-tab-button tab="ttransactionhistory" href="/customer/transactionhistory">
+        <ion-tab-button tab="ttransactionhistory" href="">
           <span class="notif" v-if="counter > 0">1</span>
           <ion-icon :icon="timeOutline" />
         </ion-tab-button>
-        <ion-tab-button tab="tprofile" href="/customer/profile">
+        <ion-tab-button tab="tprofile" href="/technician/profile">
           <ion-icon :icon="personCircleOutline" />
         </ion-tab-button>
       </ion-tab-bar>

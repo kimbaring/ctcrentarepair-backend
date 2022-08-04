@@ -254,8 +254,7 @@ align-items: center;
 
 .announcements ion-card{
     background: #fff;
-    border:1px solid #ccc;
-    box-shadow:none;
+    box-shadow: 0 2px 5px #aaa;
     padding:10px;
     border-radius:20px;
 }

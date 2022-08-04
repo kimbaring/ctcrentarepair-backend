@@ -168,7 +168,7 @@ function dateFormat(stringFormat,dateString){
     dateFormat = dateFormat.replaceAll('%lm',months[date.getMonth()]);
     dateFormat = dateFormat.replaceAll('%m',date.getMonth()+1);
     dateFormat = (date.getMinutes() >= 10) ?  dateFormat.replaceAll('%i',date.getMinutes()) : dateFormat.replaceAll('%i',"0"+date.getMinutes());
-    dateFormat = (date.getSeconds() >= 10) ?  dateFormat.replaceAll('%i',date.getSeconds()) : dateFormat.replaceAll('%i',"0"+date.getSeconds());
+    dateFormat = (date.getSeconds() >= 10) ?  dateFormat.replaceAll('%s',date.getSeconds()) : dateFormat.replaceAll('%s',"0"+date.getSeconds());
     let hour = date.getHours() + 1;
     if(hour > 12) {
         dateFormat = dateFormat.replaceAll('%h',hour - 12);
@@ -224,6 +224,29 @@ const local = new LocalStore();
 
 
 
+function toDataURL(file){
+    const filereader = new FileReader();
+    filereader.readAsDataURL(file);
+    return new Promise((resolve) => {
+        filereader.addEventListener('load',() => {
+            resolve(filereader.result);
+        });
+    });
+}
+
+
+
+function toDataURL(file){
+    const filereader = new FileReader();
+    filereader.readAsDataURL(file);
+    return new Promise((resolve) => {
+        filereader.addEventListener('load',() => {
+            resolve(filereader.result);
+        });
+    });
+}
+
+
 
 
 
@@ -237,5 +260,6 @@ export {
     openToast,
     local,
     dateFormat,
-    removeFix
+    removeFix,
+    toDataURL
 }; 

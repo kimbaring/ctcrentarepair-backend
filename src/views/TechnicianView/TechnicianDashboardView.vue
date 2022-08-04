@@ -4,14 +4,13 @@
         <div class="mainlogo">
             <img src="../../img/headerlogo.png"/>
         </div>
-        <p>Welcome, John Doe!</p>
-        <div class="serv">
+        
+        <div class="top">
+            <h2>Welcome, <span>John Doe!</span></h2>
             <ion-card>
                     <ion-card-content>
-                        <h3>Wallet</h3>
-                        <div class="services">
-                         <h3 style="color:white;">Your current balance is $200</h3>
-                        </div>
+                        <h3 style="color:white;">Your Wallet</h3>
+                        <h2><sup>$</sup>200</h2>
                     </ion-card-content>
             </ion-card>
         </div>
@@ -128,95 +127,53 @@ export default({
 ion-content{
     --ion-background-color: var(--ion-color-content);
 }
-ion-content h3{
-    color: #fff;
-    margin: 10px auto 30px;
+
+.top > h2{
+    color:#fff;
+    font-size: 18px;
     font-weight: 700;
-    text-align: center;
-    padding: 0 10px;
-}
-ion-content p{
-    margin:30px 0 0;
-    color:#fff;
-    text-align: center;
+    height: 100px;
+    max-width: 200px;
+
 }
 
+.top h2 span{
+    font-size: 30px;
+    display: block;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
 
-.serv ion-card{
+.top{
+    display: flex;
+    padding: 40px 20px;
+    justify-content: space-around;
+}
+
+.top ion-card{
+    text-align: center;
     box-shadow: none;
-}
-.serv ion-card-content{
-    padding: 0;
-}
-.services{
-    display: flex;
-    text-align: center;
-    color: #000;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap:10px;
-    margin: 0 0 20px;
-}
-
-.services ion-card{
-    width:30%;
-    padding:20px 5px;
     color:#fff;
-    border:none;
-    border-radius:20px;
-    background: #6b0700;
-    border:3px solid #6b0700;
-    margin: 0;
+    background:#6b0700;
+    width:150px;
+    height: 100px;
     display: flex;
-justify-content: center;
-align-items: center;
-}
-.services ion-card-content{
-    
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-}
-.services ion-card:hover{
-    border:3px solid #fff;
-}
-.services ion-card::before{
-    content:"";
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translateX(-50%) translateY(-50%);
-    width:0;
-    height: 0;
-    background: rgb(255,255,255,0.4);
-    border-radius: 20px;
-    transition: 0.4s;
-}
-.services ion-card:active::before{
-    width: 300%;
-    height: 300%;
+    justify-content: center;
 }
 
-.services ion-icon{
-    display: block;
-    text-align: center;
-    font-size: 50px;
-    color: #000;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    color: #fff;
+.top ion-card-content h2{
+    font-size: 30px;
+    font-weight: 700;
 }
-.services img{
-    width: 69px;
-    margin-bottom: 1px;
-    display: block;
+
+.top ion-card-content h2 sup{
+    font-size: 16px;
 }
+
+
 
 .announcements{
     background: #fff;
@@ -227,8 +184,8 @@ align-items: center;
 
 .announcements ion-card{
     background: #fff;
-    border:1px solid #ccc;
-    box-shadow:none;
+    color:#333;
+    box-shadow: 0 2px 5px #aaa;
     padding:10px;
     border-radius:20px;
 }

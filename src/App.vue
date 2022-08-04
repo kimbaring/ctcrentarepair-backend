@@ -52,6 +52,11 @@ export default ({
           }
           openToast("Please log out properly!", 'danger');
         }
+
+        if(local.getObject('user_info').role == 'Customer' && this.$route.path.split('/')[1] != 'customer') router.replace('/customer/dashboard');
+        else if(local.getObject('user_info').role == 'Technician' && this.$route.path.split('/')[1] != 'technician') router.replace('/technician/dashboard');
+        else if(local.getObject('user_info').role == 'Tow Truck Operator' && this.$route.path.split('/')[1] != 'tow') router.replace('/comingsoon');
+        else if(local.getObject('user_info').role == 'Ride Sharer' && this.$route.path.split('/')[1] != 'ridesharer') router.replace('/comingsoon');
       }
     }
   },

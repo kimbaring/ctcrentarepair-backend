@@ -3,7 +3,8 @@
     <ion-content>
         <div class="section">
             <div class="profile_img">
-                <ion-img></ion-img>
+                <div class="loadinner"></div>
+                <ion-img :src="profile_img"></ion-img>
             </div>
             <div class="profile_form">
                 <ion-input type="password" v-model="user.current_password" placeholder="Current Password"></ion-input>
@@ -36,8 +37,12 @@ export default({
     },
     data(){
         return{
+            profile_img: null,
             user:{}
         };
+    },
+    mounted(){
+        this.profile_img = local.getObject('user_info').profile_img;
     },
     methods:{
         save(){
@@ -76,7 +81,7 @@ export default({
                 else if(res.data.success){
                     openToast('Password Changed!', 'success');
                 }
-                this.user = {role:"Customer"};
+                
             });
         }
     }
@@ -109,6 +114,14 @@ right: 50px;width: 200px;height: 200px;margin: 0 auto;border-radius: 50%;overflo
     width: 100%;
     height: 50%;
     background: #eee;
+}
+
+
+.loadinner{position:absolute;width:80px;height:80px;border-top:5px solid #fff;border-left:5px solid #fff;border-right:5px solid #6b0700;border-bottom:5px solid #6b0700;top:50%;left:50%;transform: translateX(-50%) translateY(-50%);border-radius:50%;animation-name:loadinner;animation-duration:1s;animation-iteration-count:infinite;animation-timing-function:linear;}
+
+@keyframes loadinner{
+  0%{transform: translateX(-50%) translateY(-50%) rotate(0deg);}
+  100%{transform: translateX(-50%) translateY(-50%) rotate(360deg);}
 }
 
 .profile_form{
